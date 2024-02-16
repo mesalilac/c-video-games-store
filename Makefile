@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall
 IDIR=./src/include
-DEPS=$(IDIR)/command_handler.c
+DEPS=$(IDIR)/game.c
 OUTPUT=main
 
 build:
