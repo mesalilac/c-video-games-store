@@ -2,7 +2,6 @@
 #include <string.h>
 #include "include/command_handler.h"
 
-
 int main() {
     printf("################################\n");
     printf("#     Game store dashboard     #\n");
@@ -14,7 +13,7 @@ int main() {
     while (quit_shell == 0) {
         char input[30];
 
-        printf("> ");
+        printf("\n> ");
         fgets(input, sizeof(input), stdin);
 
         // removes trailing \n
