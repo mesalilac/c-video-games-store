@@ -6,7 +6,6 @@ void help_print(char *command, char *description) {
 }
 
 void command_handler(char *input, int *quit_shell) {
-
         if (strcmp(input, "help") == 0) {
             help_print("help", "Print this message");
             help_print("exit", "Exit the shell");
