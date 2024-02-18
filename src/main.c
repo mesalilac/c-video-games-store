@@ -10,7 +10,7 @@ int main() {
     printf("################################\n");
     printf("#     Game store dashboard     #\n");
     printf("################################\n");
-    printf("type 'help' for all commands\n");
+    printf("Type 'h' or 'help' for all commands\n");
 
     int game_id = 0;
     struct Game games[100];
