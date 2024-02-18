@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-void help_print(char *command, char *description) {
-    printf("%s\t%s\n", command, description);
+void help_print(char *shortcut, char *command, char *description) {
+    printf("%s, %s\t%s\n", shortcut, command, description);
 }
 
 int main() {
@@ -41,23 +41,23 @@ int main() {
         input[strcspn(input, "\n")] = 0;
 
         // Handle input
-        if (strcmp(input, "help") == 0) {
-            help_print("help", "Print this message");
-            help_print("exit", "Exit the shell");
-            help_print("list", "List all games");
-            help_print("add", "add a new game");
-            help_print("edit", "edit name or price of a game");
-            help_print("remove", "remove a game");
-        } else if (strcmp(input, "exit") == 0) {
+        if (strcmp(input, "h") == 0 || strcmp(input, "help") == 0) {
+            help_print("h", "help", "Print this message");
+            help_print("e", "exit", "Exit the shell");
+            help_print("l", "list", "List all games");
+            help_print("a", "add", "add a new game");
+            help_print("e", "edit", "edit name or price of a game");
+            help_print("r", "remove", "remove a game");
+        } else if (strcmp(input, "e") == 0 || strcmp(input, "exit") == 0) {
             printf("Exiting shell...\n");
             quit_shell = 1;
-        } else if (strcmp(input, "list") == 0) {
+        } else if (strcmp(input, "l") == 0 || strcmp(input, "list") == 0) {
             list_games(game_id, games);
-        } else if (strcmp(input, "add") == 0) {
+        } else if (strcmp(input, "a") == 0 || strcmp(input, "add") == 0) {
             add_game(&game_id, games);
-        } else if (strcmp(input, "edit") == 0) {
+        } else if (strcmp(input, "e") == 0 || strcmp(input, "edit") == 0) {
             edit_game(game_id, games);
-        } else if (strcmp(input, "remove") == 0) {
+        } else if (strcmp(input, "r") == 0 || strcmp(input, "remove") == 0) {
             remove_game(&game_id, games);
         }
     }
