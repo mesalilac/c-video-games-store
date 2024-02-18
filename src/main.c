@@ -1,3 +1,4 @@
+#include "include/game.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -10,6 +11,23 @@ int main() {
     printf("#     Game store dashboard     #\n");
     printf("################################\n");
     printf("type 'help' for all commands\n");
+
+    int game_id = 0;
+    struct Game games[100];
+    games[game_id].id = game_id;
+    games[game_id].name = "Game1";
+    games[game_id].price = 10.0;
+    ++game_id;
+
+    games[game_id].id = game_id;
+    games[game_id].name = "Game2";
+    games[game_id].price = 20.0;
+    ++game_id;
+
+    games[game_id].id = game_id;
+    games[game_id].name = "Game3";
+    games[game_id].price = 30.0;
+    ++game_id;
 
     int quit_shell = 0;
 
@@ -34,7 +52,9 @@ int main() {
             printf("Exiting shell...\n");
             quit_shell = 1;
         } else if (strcmp(input, "list") == 0) {
+            list_games(game_id, games);
         } else if (strcmp(input, "add") == 0) {
+            add_game(&game_id, games);
         } else if (strcmp(input, "change") == 0) {
         } else if (strcmp(input, "remove") == 0) {
         }
