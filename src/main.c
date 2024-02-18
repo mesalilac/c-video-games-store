@@ -58,6 +58,7 @@ int main() {
         } else if (strcmp(input, "edit") == 0) {
             edit_game(game_id, games);
         } else if (strcmp(input, "remove") == 0) {
+            remove_game(&game_id, games);
         }
     }
 

@@ -88,3 +88,22 @@ void edit_game(int game_id, Game *p_games) {
         }
     }
 }
+
+void remove_game(int *game_id, Game *p_games) {
+    int id;
+
+    printf("Enter game id: ");
+    scanf("%i", &id);
+
+    for (int i = 0; i < *game_id; i++) {
+        if (p_games[i].id == id) {
+            if (i < (*game_id - 1)) {
+                for (int j = i; j < (*game_id - 1); j++)
+                    p_games[j] = p_games[j + 1];
+            }
+
+            (*game_id)--;
+            break;
+        }
+    }
+}
