@@ -46,7 +46,7 @@ int main() {
             help_print("exit", "Exit the shell");
             help_print("list", "List all games");
             help_print("add", "add a new game");
-            help_print("change", "change name or price of a game");
+            help_print("edit", "edit name or price of a game");
             help_print("remove", "remove a game");
         } else if (strcmp(input, "exit") == 0) {
             printf("Exiting shell...\n");
@@ -55,7 +55,8 @@ int main() {
             list_games(game_id, games);
         } else if (strcmp(input, "add") == 0) {
             add_game(&game_id, games);
-        } else if (strcmp(input, "change") == 0) {
+        } else if (strcmp(input, "edit") == 0) {
+            edit_game(game_id, games);
         } else if (strcmp(input, "remove") == 0) {
         }
     }
